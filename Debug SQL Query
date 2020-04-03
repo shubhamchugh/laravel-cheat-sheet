@@ -1,0 +1,23 @@
+To output to the screen the last queries ran you can use this:
+
+DB::enableQueryLog(); // Enable query log
+
+// Your Eloquent query executed by using get()
+
+dd(DB::getQueryLog()); // Show results of log
+I believe the most recent queries will be at the bottom of the array.
+
+You will have something like that:
+
+array(1) {
+  [0]=>
+  array(3) {
+    ["query"]=>
+    string(21) "select * from "users""
+    ["bindings"]=>
+    array(0) {
+    }
+    ["time"]=>
+    string(4) "0.92"
+  }
+}
